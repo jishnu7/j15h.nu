@@ -1,5 +1,6 @@
 {
   "name": "j15h.nu",
+  "short_name": "j15h.nu",
   "icons": [
     {
       "src": "/android-chrome-48x48.png",
@@ -31,5 +32,9 @@
       "type": "image\/png",
       "density": 4
     }
-  ]
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FFEBEE",
+  "theme_color": "#B71C1C"
 }
