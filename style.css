@@ -1,0 +1,502 @@
+@charset "UTF-8";
+
+/*
+
+  BASSCSS
+
+  Next-level CSS toolkit - http://jxnblk.github.io/basscss
+
+  Made with love by Jxnblk - ©2014 Brent Jackson
+  MIT License http://opensource.org/licenses/MIT
+
+*/
+
+body {
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+article,header,main,nav,summary {
+  display: block;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+h1,.h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h2,.h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h3,.h3 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+p,.p,h4,h5,h6,ul {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+small,.small {
+  font-size: .875rem;
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 48em) {
+  .h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  .h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .p {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+
+  .small {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .h1 {
+    font-size: 6rem;
+    line-height: 8rem;
+  }
+
+  .h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+.measure {
+  max-width: 48rem;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+.ml1 {
+  margin-left: 1rem;
+}
+
+.mt2 {
+  margin-top: 2rem;
+}
+
+.ml2 {
+  margin-left: 2rem;
+}
+
+.mt3 {
+  margin-top: 3rem;
+}
+
+.ml3 {
+  margin-left: 3rem;
+}
+
+.mt4 {
+  margin-top: 4rem;
+}
+
+.ml4 {
+  margin-left: 4rem;
+}
+
+.wrap {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mt-responsive {
+  margin-top: 2rem;
+}
+
+.ml-responsive {
+  margin-left: 2rem;
+}
+
+@media screen and (min-width: 48em) and (max-width: 64em) {
+  .mt-responsive {
+    margin-top: 3rem;
+  }
+
+  .ml-responsive {
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .mt-responsive {
+    margin-top: 4rem;
+  }
+
+  .ml-responsive {
+    margin-left: 4rem;
+  }
+}
+
+.p1 {
+  padding: 1rem;
+}
+
+.px1 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.p2 {
+  padding: 2rem;
+}
+
+.px2 {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.p3 {
+  padding: 3rem;
+}
+
+.px3 {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.p4 {
+  padding: 4rem;
+}
+
+.px4 {
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+
+.p-responsive {
+  padding: 1.5rem;
+}
+
+.px-responsive {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+@media screen and (min-width: 48em) and (max-width: 64em) {
+  .p-responsive {
+    padding: 3rem;
+  }
+
+  .px-responsive {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .p-responsive {
+    padding: 4rem;
+  }
+
+  .px-responsive {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+
+.right {
+  float: right;
+}
+
+.clearfix:before,.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.b0 {
+  bottom: 0;
+}
+
+.l0 {
+  left: 0;
+}
+
+.z1 {
+  z-index: 1;
+}
+
+.z2 {
+  z-index: 2;
+}
+
+.z3 {
+  z-index: 3;
+}
+
+.z4 {
+  z-index: 4;
+}
+
+body {
+  color: #333333;
+  background-color: #fff;
+}
+
+a {
+  color: #0096cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #007199;
+}
+
+/*
+
+  Pixyll
+
+  A simple, beautiful theme for Jekyll that emphasizes content rather than
+  aesthetic fluff.
+
+  Best served with BASSCSS (http://jxnblk.github.io/basscss)
+
+  Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander
+  MIT License http://opensource.org/licenses/MIT
+
+*/
+
+body {
+  font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", serif;
+}
+
+html,body {
+  height: 100%;
+}
+
+.site-wrap {
+  min-height: 100%;
+  margin-bottom: -120px;
+}
+
+.site-wrap:after {
+  content: "";
+  display: block;
+}
+
+.site-wrap:after {
+  height: 120px;
+}
+
+body {
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.site-header a {
+  color: #333;
+  font-weight: 300;
+}
+
+.site-header nav a {
+  font-size: 1rem;
+  color: #666;
+}
+
+.site-header nav a:hover {
+  color: #444;
+  opacity: 1;
+  border-bottom: 2px solid #444;
+}
+
+.site-nav a + a {
+  margin-left: 1em;
+}
+
+.site-nav {
+  margin: 0;
+  padding: 0;
+}
+
+.site-header a:hover {
+  opacity: 0.88;
+}
+
+.post-link .post-title {
+  margin-top: 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.wrap .measure {
+  margin: 0 auto;
+}
+
+.meta,.post-meta {
+  width: auto;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0;
+  padding: .25em 0;
+  color: #7a7a7a;
+  font-style: italic;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+  font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 1em 0 0.5em;
+}
+
+.social-icons {
+  padding: 0.5em 0 0 0;
+  font-size: 1.25rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 48em) {
+  .site-header .site-title {
+    float: left;
+  }
+
+  .meta,  .post-meta {
+    margin: 0;
+    padding: 0;
+    font-size: 1.25rem;
+  }
+
+  .h1,  h1 {
+    font-size: 3.250rem;
+  }
+
+  .h2,  h2 {
+    font-size: 2.298rem;
+  }
+
+  .h3,  h3 {
+    font-size: 1.625rem;
+  }
+
+  .h4,  h4 {
+    font-size: 1.150rem;
+  }
+
+  .p,  p,  li {
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+
+  .small {
+    font-size: 1rem;
+  }
+
+  .post-link .post-title {
+    margin-top: 0.5em;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .h1,  h1 {
+    font-size: 2.827rem;
+  }
+
+  .h2,  h2 {
+    font-size: 1.999rem;
+  }
+
+  .h3,  h3 {
+    font-size: 1.413rem;
+  }
+
+  .h4,  h4 {
+    font-size: 1rem;
+  }
+
+  .site-header {
+    text-align: center;
+  }
+
+  .site-header .site-title {
+    float: center;
+  }
+
+  .site-header .site-nav {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: 0.666em;
+    margin-bottom: 1.333em;
+  }
+
+  .social-icons .right {
+    text-align: center;
+    float: none;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .h1,  h1 {
+    font-size: 4.498rem;
+  }
+
+  .h2,  h2 {
+    font-size: 3.18rem;
+  }
+
+  .h3,  h3 {
+    font-size: 2.249rem;
+  }
+
+  .h4,  h4 {
+    font-size: 1.591rem;
+  }
+
+  .post-link .post-title {
+    margin-top: .125em;
+  }
+}
+
+h1,h2,h3,h4 {
+  word-wrap: break-word;
+}
