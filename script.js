@@ -1,10 +1,12 @@
 (function() {
   'use strict';
 
+  /*
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('./service-worker.js');
   }
+  */
 
   // respect user's privacy
   if (navigator.doNotTrack != "yes" && navigator.doNotTrack != "1" && navigator.msDoNotTrack != "1") {
