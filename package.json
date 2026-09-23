@@ -1,0 +1,13 @@
+{
+  "name": "j15h.nu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal home page, plain HTML and CSS",
+  "homepage": "https://j15h.nu",
+  "scripts": {
+    "start": "serve . --listen 3000 --no-clipboard"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
