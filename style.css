@@ -1,136 +1,90 @@
 @charset "UTF-8";
 
 /*
-
-  BASSCSS
-
-  Next-level CSS toolkit - http://jxnblk.github.io/basscss
-
-  Made with love by Jxnblk - ©2014 Brent Jackson
-  MIT License http://opensource.org/licenses/MIT
-
+  Trimmed from Basscss (Brent Jackson, MIT) and Pixyll (John Otander, MIT).
+  Only the rules this page actually uses are kept.
 */
+
+:root {
+  --bg: #fff;
+  --text: #333;
+  --muted: #666;
+  --muted-hover: #444;
+  --link: #0096cc;
+  --link-hover: #007199;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #d6d6d6;
+    --muted: #9a9a9a;
+    --muted-hover: #d6d6d6;
+    --link: #4db8e8;
+    --link-hover: #7fd0f4;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
 body {
   margin: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--text);
+  background-color: var(--bg);
 }
 
-h1,h2,h3,h4,h5,h6,p,ul {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-article,header,main,nav,summary {
+article,
+header,
+main,
+nav {
   display: block;
 }
 
-body {
-  font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  line-height: 1.5rem;
-  font-weight: 400;
+a {
+  color: var(--link);
+  text-decoration: none;
 }
 
-h1,.h1 {
-  font-size: 2rem;
-  line-height: 2.5rem;
+a:hover {
+  color: var(--link-hover);
 }
 
-h2,.h2 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-h3,.h3 {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-}
-
-p,.p,h4,h5,h6,ul {
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-}
-
-small,.small {
-  font-size: .875rem;
-  line-height: 1.5rem;
-}
-
-@media screen and (min-width: 48em) {
-  .h1 {
-    font-size: 4rem;
-    line-height: 5rem;
-  }
-
-  .h2 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-  }
-
-  .h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .p {
-    font-size: 1.25rem;
-    line-height: 2rem;
-  }
-
-  .small {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (min-width: 64em) {
-  .h1 {
-    font-size: 6rem;
-    line-height: 8rem;
-  }
-
-  .h2 {
-    font-size: 3rem;
-    line-height: 3.5rem;
-  }
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 strong {
   font-weight: bold;
 }
 
-.measure {
-  max-width: 48rem;
+small {
+  font-size: .875rem;
+  line-height: 1.5rem;
 }
 
-.mt1 {
-  margin-top: 1rem;
-}
+/* Layout */
 
-.ml1 {
-  margin-left: 1rem;
-}
-
-.mt2 {
-  margin-top: 2rem;
-}
-
-.ml2 {
-  margin-left: 2rem;
-}
-
-.mt3 {
-  margin-top: 3rem;
-}
-
-.ml3 {
-  margin-left: 3rem;
-}
-
-.mt4 {
-  margin-top: 4rem;
-}
-
-.ml4 {
-  margin-left: 4rem;
+.site-wrap {
+  min-height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 120px;
 }
 
 .wrap {
@@ -138,68 +92,13 @@ strong {
   margin-left: auto;
 }
 
-.mt-responsive {
+.measure {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.mt2 {
   margin-top: 2rem;
-}
-
-.ml-responsive {
-  margin-left: 2rem;
-}
-
-@media screen and (min-width: 48em) and (max-width: 64em) {
-  .mt-responsive {
-    margin-top: 3rem;
-  }
-
-  .ml-responsive {
-    margin-left: 3rem;
-  }
-}
-
-@media screen and (min-width: 64em) {
-  .mt-responsive {
-    margin-top: 4rem;
-  }
-
-  .ml-responsive {
-    margin-left: 4rem;
-  }
-}
-
-.p1 {
-  padding: 1rem;
-}
-
-.px1 {
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-.p2 {
-  padding: 2rem;
-}
-
-.px2 {
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
-
-.p3 {
-  padding: 3rem;
-}
-
-.px3 {
-  padding-right: 3rem;
-  padding-left: 3rem;
-}
-
-.p4 {
-  padding: 4rem;
-}
-
-.px4 {
-  padding-right: 4rem;
-  padding-left: 4rem;
 }
 
 .p-responsive {
@@ -233,118 +132,21 @@ strong {
   }
 }
 
-.right {
-  float: right;
-}
+/* Header */
 
-.clearfix:before,.clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.b0 {
-  bottom: 0;
-}
-
-.l0 {
-  left: 0;
-}
-
-.z1 {
-  z-index: 1;
-}
-
-.z2 {
-  z-index: 2;
-}
-
-.z3 {
-  z-index: 3;
-}
-
-.z4 {
-  z-index: 4;
-}
-
-body {
-  color: #333333;
-  background-color: #fff;
-}
-
-a {
-  color: #0096cc;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #007199;
-}
-
-/*
-
-  Pixyll
-
-  A simple, beautiful theme for Jekyll that emphasizes content rather than
-  aesthetic fluff.
-
-  Best served with BASSCSS (http://jxnblk.github.io/basscss)
-
-  Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander
-  MIT License http://opensource.org/licenses/MIT
-
-*/
-
-body {
-  font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", serif;
-}
-
-html,body {
-  height: 100%;
-}
-
-.site-wrap {
-  min-height: 100%;
-  margin-bottom: -120px;
-}
-
-.site-wrap:after {
-  content: "";
-  display: block;
-}
-
-.site-wrap:after {
-  height: 120px;
-}
-
-body {
-  font-size: 1.5rem;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+.site-header .measure {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .site-header a {
-  color: #333;
+  color: var(--text);
   font-weight: 300;
 }
 
-.site-header nav a {
-  font-size: 1rem;
-  color: #666;
-}
-
-.site-header nav a:hover {
-  color: #444;
-  opacity: 1;
-  border-bottom: 2px solid #444;
-}
-
-.site-nav a + a {
-  margin-left: 1em;
+.site-header a:hover {
+  opacity: 0.88;
 }
 
 .site-nav {
@@ -352,151 +154,102 @@ body {
   padding: 0;
 }
 
-.site-header a:hover {
-  opacity: 0.88;
-}
-
-.post-link .post-title {
-  margin-top: 0;
-  font-weight: 600;
-  color: #333;
-}
-
-.wrap .measure {
-  margin: 0 auto;
-}
-
-.meta,.post-meta {
-  width: auto;
+.site-nav a {
   font-size: 1rem;
-  font-weight: 300;
-  margin: 0;
-  padding: .25em 0;
-  color: #7a7a7a;
-  font-style: italic;
+  color: var(--muted);
 }
 
-p {
-  font-weight: 300;
-  line-height: 1.5;
-  color: #333;
+.site-nav a:hover {
+  color: var(--muted-hover);
+  opacity: 1;
+  border-bottom: 2px solid var(--muted-hover);
 }
 
-h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
-  font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
-  font-weight: 900;
-  line-height: 1.2;
-  margin: 1em 0 0.5em;
+.site-nav a + a {
+  margin-left: 1em;
 }
 
-.social-icons {
-  padding: 0.5em 0 0 0;
-  font-size: 1.25rem;
-  width: 100%;
-}
-
-@media screen and (min-width: 48em) {
-  .site-header .site-title {
-    float: left;
-  }
-
-  .meta,  .post-meta {
-    margin: 0;
-    padding: 0;
-    font-size: 1.25rem;
-  }
-
-  .h1,  h1 {
-    font-size: 3.250rem;
-  }
-
-  .h2,  h2 {
-    font-size: 2.298rem;
-  }
-
-  .h3,  h3 {
-    font-size: 1.625rem;
-  }
-
-  .h4,  h4 {
-    font-size: 1.150rem;
-  }
-
-  .p,  p,  li {
-    font-size: 1.25rem;
-    line-height: 1.8;
-  }
-
-  .small {
-    font-size: 1rem;
-  }
-
-  .post-link .post-title {
-    margin-top: 0.5em;
-  }
-}
-
-@media screen and (max-width: 48em) {
-  .h1,  h1 {
-    font-size: 2.827rem;
-  }
-
-  .h2,  h2 {
-    font-size: 1.999rem;
-  }
-
-  .h3,  h3 {
-    font-size: 1.413rem;
-  }
-
-  .h4,  h4 {
-    font-size: 1rem;
-  }
-
-  .site-header {
+@media screen and (max-width: 47.99em) {
+  .site-header .measure {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
-  .site-header .site-title {
-    float: center;
-  }
-
-  .site-header .site-nav {
-    width: 100%;
-    float: left;
-    text-align: center;
+  .site-nav {
     margin-top: 0.666em;
     margin-bottom: 1.333em;
   }
+}
 
-  .social-icons .right {
-    text-align: center;
-    float: none;
+/* Content */
+
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h2,
+h3 {
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 1em 0 0.5em;
+  word-wrap: break-word;
+  scroll-margin-top: 1rem;
+}
+
+h2 {
+  font-size: 1.999rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p,
+ul,
+li {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 48em) {
+  h2 {
+    font-size: 2.298rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  p,
+  li {
+    font-size: 1.25rem;
+    line-height: 1.8;
   }
 }
 
 @media screen and (min-width: 64em) {
-  .h1,  h1 {
-    font-size: 4.498rem;
-  }
-
-  .h2,  h2 {
+  h2 {
     font-size: 3.18rem;
   }
 
-  .h3,  h3 {
-    font-size: 2.249rem;
-  }
-
-  .h4,  h4 {
+  h3 {
     font-size: 1.591rem;
   }
-
-  .post-link .post-title {
-    margin-top: .125em;
-  }
-}
-
-h1,h2,h3,h4 {
-  word-wrap: break-word;
 }
