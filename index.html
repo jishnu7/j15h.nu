@@ -20,6 +20,13 @@
     <meta name="twitter:site" content="@jishnu7">
     <meta name="twitter:creator" content="@jishnu7">
 
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
+
     <link rel="manifest" href="/manifest.json">
     <link rel="canonical" href="https://j15h.nu/">
 
@@ -47,6 +54,7 @@
             <a href="#projects">Projects</a>
             <a href="#blog">Blog</a>
             <a href="#contact">Contact</a>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between day and night mode">☼</button>
           </nav>
         </div>
       </div>

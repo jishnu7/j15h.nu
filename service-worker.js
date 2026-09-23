@@ -1,6 +1,6 @@
-// Stale-while-revalidate for same-origin requests. Cached copy is served
-// immediately, the network copy replaces it for the next visit.
-var cacheName = 'j15h-2';
+// Network first, cache fallback. A normal reload always shows the current
+// files. The cache is only used when the network is unavailable.
+var cacheName = 'j15h-3';
 var precache = [
   '/',
   '/style.css',
@@ -39,18 +39,16 @@ self.addEventListener('fetch', function (e) {
   }
 
   e.respondWith(
-    caches.open(cacheName).then(function (cache) {
-      return cache.match(e.request).then(function (cached) {
-        var network = fetch(e.request).then(function (response) {
-          if (response.ok) {
-            cache.put(e.request, response.clone());
-          }
-          return response;
-        }).catch(function () {
-          return cached;
+    fetch(e.request).then(function (response) {
+      if (response.ok) {
+        var copy = response.clone();
+        caches.open(cacheName).then(function (cache) {
+          cache.put(e.request, copy);
         });
-        return cached || network;
-      });
+      }
+      return response;
+    }).catch(function () {
+      return caches.match(e.request);
     })
   );
 });
